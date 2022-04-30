@@ -3,21 +3,31 @@
 #include "ASpell.h"
 #include "Dummy.h"
 #include "Fwosh.h"
+#include "Fireball.h"
+#include "BrickWall.h"
+#include "Polymorf.h"
+#include ""
 
 
 int main()
 {
-	Warlock richard("Richard", "the Titled");
+	Warlock richard("Richard", "foo");
+	richard.setTitle("Hello, I'm Richard the Warlock!");
+	BrickWall model1;
 
-	Dummy bob;
-	Fwoosh* fwoosh = new Fwoosh();
+	Polymorph* polymorph = new Polymorph();
+	TargetGenerator tarGen;
 
-	richard.learnSpell(fwoosh);
-	richard.learnSpell(fwoosh);
+	tarGen.learnTargetType(&model1);
+	richard.learnSpell(polymorph);
+
+	Fireball* fireball = new Fireball();
+
+	richard.learnSpell(fireball);
+
+	ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
 
 	richard.introduce();
-	richard.launchSpell("Fwoosh", bob);
-
-	richard.forgetSpell("Fwoosh");
-	richard.launchSpell("Fwoosh", bob);
+	richard.launchSpell("Polymorph", *wall);
+	richard.launchSpell("Fireball", *wall);
 }

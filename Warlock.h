@@ -6,6 +6,7 @@
 #include <vector>
 #include "ATarget.h"
 #include "ASpell.h"
+#include "SpellBook.h"
 
 class Warlock
 {
@@ -14,7 +15,7 @@ private:
 	std::string title;
 	Warlock();
 	Warlock(Warlock const &other);
-	std::vector<ASpell*> spells;
+	SpellBook SpellBook;
 
 public:
 	Warlock(std::string const &name, std::string const &title);
