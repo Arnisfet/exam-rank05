@@ -8,7 +8,7 @@ ASpell::ASpell()
 {}
 
 ASpell::ASpell(std::string const &name, std::string const &title): name(name)
-, effects(effects)
+, effects(title)
 {}
 
 ASpell::ASpell(ASpell const &other): name(other.name), effects(other.effects)

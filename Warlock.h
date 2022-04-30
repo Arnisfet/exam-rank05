@@ -28,7 +28,7 @@ public:
 	void setTitle(std::string const &title);
 	void learnSpell(ASpell *spell);
 	void forgetSpell(std::string const &spellName);
-	void launchSpell(std::string const &spellName, ATarget const target);
+	void launchSpell(std::string const &spellName, ATarget const &target);
 
 	void introduce() const;
 };
