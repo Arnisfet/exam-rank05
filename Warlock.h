@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+#include <map>
 #include <ASpell.h>
 
 class Warlock
@@ -10,7 +10,7 @@ private:
 	Warlock();
 	Warlock const &operator=(Warlock const &other);
 	Warlock(Warlock const &other);
-	std::vector<ASpell *> arr;
+	std::map<std::string, ASpell *> arr;
 public:
 	Warlock(std::string const &name, std::string const &title);
 	~Warlock();
